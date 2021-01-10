@@ -1,0 +1,38 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev "1"
+Comp ""
+Comment1 "Designed for AISLER 4-Layer Service"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x08 J1
+U 1 1 5FEF346C
+P 7550 1550
+F 0 "J1" H 7630 1542 50  0000 L CNN
+F 1 "Conn_01x08" H 7630 1451 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 7550 1550 50  0001 C CNN
+F 3 "~" H 7550 1550 50  0001 C CNN
+	1    7550 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x08 J2
+U 1 1 5FEF41EC
+P 7550 2650
+F 0 "J2" H 7630 2642 50  0000 L CNN
+F 1 "Conn_01x08" H 7630 2551 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 7550 2650 50  0001 C CNN
+F 3 "~" H 7550 2650 50  0001 C CNN
+	1    7550 2650
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

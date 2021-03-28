@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\Moritz\Documents\DIY Projects\haptic display\Github\PCBs\haptic display\haptic display 8x8\haptic display 8x8 coil matrix\haptic display 8x8 aisler.sch</source>
+    <date>28/03/2021 22:05:09</date>
+    <tool>Eeschema (5.1.5)-3</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev>1</rev>
+        <date/>
+        <source>haptic display 8x8 aisler.sch</source>
+        <comment number="1" value="Designed for AISLER 4-Layer Service"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>Conn_01x08</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x08" description="Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FEF346C</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x08</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector_Generic" part="Conn_01x08" description="Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5FEF41EC</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector_Generic" part="Conn_01x08">
+      <description>Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x08</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\share\kicad\library/Connector_Generic.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="col1">
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="2" name="row8">
+      <node ref="J2" pin="8"/>
+    </net>
+    <net code="3" name="row7">
+      <node ref="J2" pin="7"/>
+    </net>
+    <net code="4" name="row6">
+      <node ref="J2" pin="6"/>
+    </net>
+    <net code="5" name="row5">
+      <node ref="J2" pin="5"/>
+    </net>
+    <net code="6" name="row4">
+      <node ref="J2" pin="4"/>
+    </net>
+    <net code="7" name="row3">
+      <node ref="J2" pin="3"/>
+    </net>
+    <net code="8" name="row2">
+      <node ref="J2" pin="2"/>
+    </net>
+    <net code="9" name="row1">
+      <node ref="J2" pin="1"/>
+    </net>
+    <net code="10" name="col8">
+      <node ref="J1" pin="8"/>
+    </net>
+    <net code="11" name="col7">
+      <node ref="J1" pin="7"/>
+    </net>
+    <net code="12" name="col6">
+      <node ref="J1" pin="6"/>
+    </net>
+    <net code="13" name="col5">
+      <node ref="J1" pin="5"/>
+    </net>
+    <net code="14" name="col4">
+      <node ref="J1" pin="4"/>
+    </net>
+    <net code="15" name="col3">
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="16" name="col2">
+      <node ref="J1" pin="2"/>
+    </net>
+  </nets>
+</export>

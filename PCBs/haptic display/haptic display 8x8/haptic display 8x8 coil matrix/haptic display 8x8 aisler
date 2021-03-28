@@ -1,0 +1,7 @@
+"Source:","C:\Users\Moritz\Documents\DIY Projects\haptic display\Github\PCBs\haptic display\haptic display 8x8\haptic display 8x8 coil matrix\haptic display 8x8 aisler.sch"
+"Date:","28/03/2021 22:05:09"
+"Tool:","Eeschema (5.1.5)-3"
+"Component Count:","2"
+"Ref","Value","Footprint","Datasheet","Manufacturer","Vendor"
+"J1","Conn_01x08","Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical","~","",""
+"J2","Conn_01x08","Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical","~","",""

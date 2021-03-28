@@ -1,0 +1,8 @@
+"Id";"Designator";"Package";"Quantity";"Designation";"Supplier and ref";
+1;"U1";"WEMOS_D1_mini_light";1;"WeMos_D1_mini";;;
+2;"J5,J4,J3,J2";"PinSocket_1x08_P2.54mm_Vertical";4;"Conn_01x08_Female";;;
+3;"J1";"CUI_UJC-HP-3-SMT-TR";1;"UJC-HP-3-SMT-TR";;;
+4;"IC3,IC2,IC1";"SOP65P640X120-25N";3;"DRV8912QPWPRQ1";;;
+5;"C13";"C_1210_3225Metric";1;"10µF";;;
+6;"C12,C11,C10,C9,C8,C7,C6,C5,C4";"C_0805_2012Metric";9;"0.1µF";;;
+7;"C1";"C_0805_2012Metric";1;"1µF";;;

@@ -1,0 +1,430 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L pspice:DIODE D?
+U 1 1 6060DA09
+P 3200 1500
+F 0 "D?" V 3154 1628 50  0000 L CNN
+F 1 "DIODE" V 3245 1628 50  0000 L CNN
+F 2 "" H 3200 1500 50  0001 C CNN
+F 3 "~" H 3200 1500 50  0001 C CNN
+	1    3200 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 6060E27E
+P 3200 2050
+F 0 "D?" V 3154 2178 50  0000 L CNN
+F 1 "DIODE" V 3245 2178 50  0000 L CNN
+F 2 "" H 3200 2050 50  0001 C CNN
+F 3 "~" H 3200 2050 50  0001 C CNN
+	1    3200 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 6060EB91
+P 2900 1800
+F 0 "L?" V 2719 1800 50  0000 C CNN
+F 1 "L" V 2810 1800 50  0000 C CNN
+F 2 "" H 2900 1800 50  0001 C CNN
+F 3 "~" H 2900 1800 50  0001 C CNN
+	1    2900 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3200 1700 3200 1800
+Wire Wire Line
+	3050 1800 3200 1800
+Connection ~ 3200 1800
+Wire Wire Line
+	3200 1800 3200 1850
+$Comp
+L pspice:DIODE D?
+U 1 1 606118F2
+P 4050 1500
+F 0 "D?" V 4004 1628 50  0000 L CNN
+F 1 "DIODE" V 4095 1628 50  0000 L CNN
+F 2 "" H 4050 1500 50  0001 C CNN
+F 3 "~" H 4050 1500 50  0001 C CNN
+	1    4050 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 606118FC
+P 4050 2050
+F 0 "D?" V 4004 2178 50  0000 L CNN
+F 1 "DIODE" V 4095 2178 50  0000 L CNN
+F 2 "" H 4050 2050 50  0001 C CNN
+F 3 "~" H 4050 2050 50  0001 C CNN
+	1    4050 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 60611906
+P 3750 1800
+F 0 "L?" V 3569 1800 50  0000 C CNN
+F 1 "L" V 3660 1800 50  0000 C CNN
+F 2 "" H 3750 1800 50  0001 C CNN
+F 3 "~" H 3750 1800 50  0001 C CNN
+	1    3750 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4050 1700 4050 1800
+Wire Wire Line
+	3900 1800 4050 1800
+Connection ~ 4050 1800
+Wire Wire Line
+	4050 1800 4050 1850
+$Comp
+L pspice:DIODE D?
+U 1 1 60613FFB
+P 3200 2700
+F 0 "D?" V 3154 2828 50  0000 L CNN
+F 1 "DIODE" V 3245 2828 50  0000 L CNN
+F 2 "" H 3200 2700 50  0001 C CNN
+F 3 "~" H 3200 2700 50  0001 C CNN
+	1    3200 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 60614005
+P 3200 3250
+F 0 "D?" V 3154 3378 50  0000 L CNN
+F 1 "DIODE" V 3245 3378 50  0000 L CNN
+F 2 "" H 3200 3250 50  0001 C CNN
+F 3 "~" H 3200 3250 50  0001 C CNN
+	1    3200 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 6061400F
+P 2900 3000
+F 0 "L?" V 2719 3000 50  0000 C CNN
+F 1 "L" V 2810 3000 50  0000 C CNN
+F 2 "" H 2900 3000 50  0001 C CNN
+F 3 "~" H 2900 3000 50  0001 C CNN
+	1    2900 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3200 2900 3200 3000
+Wire Wire Line
+	3050 3000 3200 3000
+Connection ~ 3200 3000
+Wire Wire Line
+	3200 3000 3200 3050
+$Comp
+L pspice:DIODE D?
+U 1 1 6061401D
+P 4050 2700
+F 0 "D?" V 4004 2828 50  0000 L CNN
+F 1 "DIODE" V 4095 2828 50  0000 L CNN
+F 2 "" H 4050 2700 50  0001 C CNN
+F 3 "~" H 4050 2700 50  0001 C CNN
+	1    4050 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 60614027
+P 4050 3250
+F 0 "D?" V 4004 3378 50  0000 L CNN
+F 1 "DIODE" V 4095 3378 50  0000 L CNN
+F 2 "" H 4050 3250 50  0001 C CNN
+F 3 "~" H 4050 3250 50  0001 C CNN
+	1    4050 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 60614031
+P 3750 3000
+F 0 "L?" V 3569 3000 50  0000 C CNN
+F 1 "L" V 3660 3000 50  0000 C CNN
+F 2 "" H 3750 3000 50  0001 C CNN
+F 3 "~" H 3750 3000 50  0001 C CNN
+	1    3750 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4050 2900 4050 3000
+Wire Wire Line
+	3900 3000 4050 3000
+Connection ~ 4050 3000
+Wire Wire Line
+	4050 3000 4050 3050
+Wire Wire Line
+	3600 3000 3600 1800
+Wire Wire Line
+	3600 1800 3600 950 
+Connection ~ 3600 1800
+Wire Wire Line
+	2750 3000 2750 1800
+Wire Wire Line
+	2750 1800 2750 950 
+Connection ~ 2750 1800
+Wire Wire Line
+	3200 1300 4050 1300
+Wire Wire Line
+	4050 1300 4650 1300
+Connection ~ 4050 1300
+Wire Wire Line
+	3200 2250 4050 2250
+Wire Wire Line
+	4050 2250 4650 2250
+Connection ~ 4050 2250
+Wire Wire Line
+	3200 2500 4050 2500
+Connection ~ 4050 2500
+Wire Wire Line
+	4050 2500 4650 2500
+Wire Wire Line
+	3200 3450 4050 3450
+Connection ~ 4050 3450
+Wire Wire Line
+	4050 3450 4650 3450
+$Comp
+L pspice:DIODE D?
+U 1 1 60618B7F
+P 6000 1500
+F 0 "D?" V 5954 1628 50  0000 L CNN
+F 1 "DIODE" V 6045 1628 50  0000 L CNN
+F 2 "" H 6000 1500 50  0001 C CNN
+F 3 "~" H 6000 1500 50  0001 C CNN
+	1    6000 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 60618B89
+P 6000 2050
+F 0 "D?" V 5954 2178 50  0000 L CNN
+F 1 "DIODE" V 6045 2178 50  0000 L CNN
+F 2 "" H 6000 2050 50  0001 C CNN
+F 3 "~" H 6000 2050 50  0001 C CNN
+	1    6000 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 60618B93
+P 5700 1800
+F 0 "L?" V 5519 1800 50  0000 C CNN
+F 1 "L" V 5610 1800 50  0000 C CNN
+F 2 "" H 5700 1800 50  0001 C CNN
+F 3 "~" H 5700 1800 50  0001 C CNN
+	1    5700 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6000 1700 6000 1800
+Wire Wire Line
+	5850 1800 6000 1800
+Connection ~ 6000 1800
+Wire Wire Line
+	6000 1800 6000 1850
+$Comp
+L pspice:DIODE D?
+U 1 1 60618BA1
+P 6850 1500
+F 0 "D?" V 6804 1628 50  0000 L CNN
+F 1 "DIODE" V 6895 1628 50  0000 L CNN
+F 2 "" H 6850 1500 50  0001 C CNN
+F 3 "~" H 6850 1500 50  0001 C CNN
+	1    6850 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 60618BAB
+P 6850 2050
+F 0 "D?" V 6804 2178 50  0000 L CNN
+F 1 "DIODE" V 6895 2178 50  0000 L CNN
+F 2 "" H 6850 2050 50  0001 C CNN
+F 3 "~" H 6850 2050 50  0001 C CNN
+	1    6850 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 60618BB5
+P 6550 1800
+F 0 "L?" V 6369 1800 50  0000 C CNN
+F 1 "L" V 6460 1800 50  0000 C CNN
+F 2 "" H 6550 1800 50  0001 C CNN
+F 3 "~" H 6550 1800 50  0001 C CNN
+	1    6550 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6850 1700 6850 1800
+Wire Wire Line
+	6700 1800 6850 1800
+Connection ~ 6850 1800
+Wire Wire Line
+	6850 1800 6850 1850
+$Comp
+L pspice:DIODE D?
+U 1 1 60618BC3
+P 6000 2700
+F 0 "D?" V 5954 2828 50  0000 L CNN
+F 1 "DIODE" V 6045 2828 50  0000 L CNN
+F 2 "" H 6000 2700 50  0001 C CNN
+F 3 "~" H 6000 2700 50  0001 C CNN
+	1    6000 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 60618BCD
+P 6000 3250
+F 0 "D?" V 5954 3378 50  0000 L CNN
+F 1 "DIODE" V 6045 3378 50  0000 L CNN
+F 2 "" H 6000 3250 50  0001 C CNN
+F 3 "~" H 6000 3250 50  0001 C CNN
+	1    6000 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 60618BD7
+P 5700 3000
+F 0 "L?" V 5519 3000 50  0000 C CNN
+F 1 "L" V 5610 3000 50  0000 C CNN
+F 2 "" H 5700 3000 50  0001 C CNN
+F 3 "~" H 5700 3000 50  0001 C CNN
+	1    5700 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6000 2900 6000 3000
+Wire Wire Line
+	5850 3000 6000 3000
+Connection ~ 6000 3000
+Wire Wire Line
+	6000 3000 6000 3050
+$Comp
+L pspice:DIODE D?
+U 1 1 60618BE5
+P 6850 2700
+F 0 "D?" V 6804 2828 50  0000 L CNN
+F 1 "DIODE" V 6895 2828 50  0000 L CNN
+F 2 "" H 6850 2700 50  0001 C CNN
+F 3 "~" H 6850 2700 50  0001 C CNN
+	1    6850 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L pspice:DIODE D?
+U 1 1 60618BEF
+P 6850 3250
+F 0 "D?" V 6804 3378 50  0000 L CNN
+F 1 "DIODE" V 6895 3378 50  0000 L CNN
+F 2 "" H 6850 3250 50  0001 C CNN
+F 3 "~" H 6850 3250 50  0001 C CNN
+	1    6850 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 60618BF9
+P 6550 3000
+F 0 "L?" V 6369 3000 50  0000 C CNN
+F 1 "L" V 6460 3000 50  0000 C CNN
+F 2 "" H 6550 3000 50  0001 C CNN
+F 3 "~" H 6550 3000 50  0001 C CNN
+	1    6550 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6850 2900 6850 3000
+Wire Wire Line
+	6700 3000 6850 3000
+Connection ~ 6850 3000
+Wire Wire Line
+	6850 3000 6850 3050
+Wire Wire Line
+	6400 3000 6400 1800
+Wire Wire Line
+	6400 1800 6400 950 
+Connection ~ 6400 1800
+Wire Wire Line
+	5550 3000 5550 1800
+Wire Wire Line
+	5550 1800 5550 950 
+Connection ~ 5550 1800
+Wire Wire Line
+	6000 1300 6850 1300
+Wire Wire Line
+	6850 1300 7350 1300
+Connection ~ 6850 1300
+Wire Wire Line
+	6000 2250 6850 2250
+Wire Wire Line
+	6850 2250 7350 2250
+Connection ~ 6850 2250
+Wire Wire Line
+	6000 2500 6850 2500
+Connection ~ 6850 2500
+Wire Wire Line
+	6850 2500 7350 2500
+Wire Wire Line
+	6000 3450 6850 3450
+Connection ~ 6850 3450
+Wire Wire Line
+	6850 3450 7350 3450
+Wire Wire Line
+	7350 1300 7350 1800
+Wire Wire Line
+	7350 1800 7550 1800
+Connection ~ 7350 1800
+Wire Wire Line
+	7350 1800 7350 2250
+Wire Wire Line
+	7350 2500 7350 2950
+Wire Wire Line
+	7350 2950 7550 2950
+Connection ~ 7350 2950
+Wire Wire Line
+	7350 2950 7350 3450
+Text GLabel 2750 950  1    50   Input ~ 0
+col1
+Text GLabel 3600 950  1    50   Input ~ 0
+col2
+Text GLabel 4650 1300 2    50   Input ~ 0
+row1+
+Text GLabel 4650 2250 2    50   Input ~ 0
+row1-
+Text GLabel 4650 2500 2    50   Input ~ 0
+row2+
+Text GLabel 4650 3450 2    50   Input ~ 0
+row2-
+Text GLabel 7550 1800 2    50   Input ~ 0
+row1
+Text GLabel 7550 2950 2    50   Input ~ 0
+row2
+Text GLabel 6400 950  1    50   Input ~ 0
+col2
+Text GLabel 5550 950  1    50   Input ~ 0
+col1
+$EndSCHEMATC

@@ -1,2 +1,3 @@
-# haptic display
+# 8x8 haptic wordclock
+
  

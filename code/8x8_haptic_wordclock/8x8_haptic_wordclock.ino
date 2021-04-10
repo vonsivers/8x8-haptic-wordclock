@@ -1,6 +1,6 @@
 /*
  * Code for 8x8 haptic wordclock
- * by Moritz v. Sivers, March 2021
+ * by Moritz v. Sivers, April 2021
  * 
  * wiring: MCU - DRV8912
  * MISO - pin 7
@@ -110,34 +110,31 @@ uint64_t mask;
 #define TWELVE   mask |= 0xF600
 #define ANDYDORO mask |= 0x8901008700000000
 
-#include <NTPClient.h>
-#include <ESP8266WiFi.h>
-#include <WiFiUdp.h>
+/* Configuration of NTP */
+#define MY_NTP_SERVER "de.pool.ntp.org"            // set the best fitting NTP server (pool) for your location
+#define MY_TZ "CET-1CEST,M3.5.0,M10.5.0/3"        // https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
 
-const char *ssid     = "your ssid";
-const char *password = "your password";
+#include <ESP8266WiFi.h>            // we need wifi to get internet access
+#include <time.h>                   // time() ctime()
 
-const long utcOffsetInSeconds = 3600; // change to your timezone
+const char *ssid     = "Your-SSID";
+const char *password = "Your-Password";
 
-uint8_t lastMinute;
-
-// Define NTP Client to get time
-WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
-
+time_t now;                         // this is the epoch
+tm tm;                              // the structure tm holds time information in a more convient way
+ 
+uint8_t lastMinute;                 // save minute when clock was last updated
 
 void setup() {
-
   Serial.begin(115200);
+  
+  configTime(MY_TZ, MY_NTP_SERVER); // --> Here is the IMPORTANT ONE LINER needed in your sketch!
 
   WiFi.begin(ssid, password);
-
   while ( WiFi.status() != WL_CONNECTED ) {
     delay ( 500 );
     DEBUG_PRINT ( "." );
   }
-
-  timeClient.begin();
 
   // start the SPI library:
   SPI.begin();
@@ -180,21 +177,21 @@ void setup() {
   testDisplay();
   //delay(2000);
   //testClock();
-  getNTPTime();
+  showTime();
   displayTime();
-  lastMinute = timeClient.getMinutes();
+  lastMinute = tm.tm_min;
     
 }
 
 void loop() {
 
-  getNTPTime();
+  showTime();
   
   // update display every 5 minutes
-  if(timeClient.getMinutes() % 5 == 0 && timeClient.getMinutes()!=lastMinute) {
+  if(tm.tm_min % 5 == 0 && tm.tm_min!=lastMinute) {
     resetLetters(1);
     displayTime();
-    lastMinute = timeClient.getMinutes();
+    lastMinute = tm.tm_min;
   }
 
 }
@@ -220,19 +217,28 @@ void testClock() {
   
 }
 
-// get time from NTP client
-//
-void getNTPTime() {
-  timeClient.update();
-
-  DEBUG_PRINT(daysOfTheWeek[timeClient.getDay()]);
-  DEBUG_PRINT(", ");
-  DEBUG_PRINT(timeClient.getHours());
-  DEBUG_PRINT(":");
-  DEBUG_PRINT(timeClient.getMinutes());
-  DEBUG_PRINT(":");
-  DEBUG_PRINTLN(timeClient.getSeconds());
-
+void showTime() {
+  time(&now);                       // read the current time
+  localtime_r(&now, &tm);           // update the structure tm with the current time
+  DEBUG_PRINT("year:");
+  DEBUG_PRINT(tm.tm_year + 1900);  // years since 1900
+  DEBUG_PRINT("\tmonth:");
+  DEBUG_PRINT(tm.tm_mon + 1);      // January = 0 (!)
+  DEBUG_PRINT("\tday:");
+  DEBUG_PRINT(tm.tm_mday);         // day of month
+  DEBUG_PRINT("\thour:");
+  DEBUG_PRINT(tm.tm_hour);         // hours since midnight  0-23
+  DEBUG_PRINT("\tmin:");
+  DEBUG_PRINT(tm.tm_min);          // minutes after the hour  0-59
+  DEBUG_PRINT("\tsec:");
+  DEBUG_PRINT(tm.tm_sec);          // seconds after the minute  0-61*
+  DEBUG_PRINT("\twday");
+  DEBUG_PRINT(tm.tm_wday);         // days since Sunday 0-6
+  if (tm.tm_isdst == 1)             // Daylight Saving Time flag
+    DEBUG_PRINT("\tDST");
+  else
+    DEBUG_PRINT("\tstandard");
+  DEBUG_PRINTLN();
   delay(1000);
 }
 
@@ -240,57 +246,57 @@ void getNTPTime() {
 //
 void displayTime(void) {
 
-  // time we display the appropriate timeClient.getMinutes() counter
-  if ((timeClient.getMinutes() > 4) && (timeClient.getMinutes() < 10)) {
+  // time we display the appropriate tm.tm_min counter
+  if ((tm.tm_min > 4) && (tm.tm_min < 10)) {
     MFIVE;
     DEBUG_PRINT("five");
   }
-  if ((timeClient.getMinutes() > 9) && (timeClient.getMinutes() < 15)) {
+  if ((tm.tm_min > 9) && (tm.tm_min < 15)) {
     MTEN;
     DEBUG_PRINT("ten");
   }
-  if ((timeClient.getMinutes() > 14) && (timeClient.getMinutes() < 20)) {
+  if ((tm.tm_min > 14) && (tm.tm_min < 20)) {
     AQUARTER;
     DEBUG_PRINT("a quarter");
   }
-  if ((timeClient.getMinutes() > 19) && (timeClient.getMinutes() < 25)) {
+  if ((tm.tm_min > 19) && (tm.tm_min < 25)) {
     TWENTY;
     DEBUG_PRINT("twenty");
   }
-  if ((timeClient.getMinutes() > 24) && (timeClient.getMinutes() < 30)) {
+  if ((tm.tm_min > 24) && (tm.tm_min < 30)) {
     TWENTY;
     MFIVE;
     DEBUG_PRINT("twenty five");
   }
-  if ((timeClient.getMinutes() > 29) && (timeClient.getMinutes() < 35)) {
+  if ((tm.tm_min > 29) && (tm.tm_min < 35)) {
     HALF;
     DEBUG_PRINT("half");
   }
-  if ((timeClient.getMinutes() > 34) && (timeClient.getMinutes() < 40)) {
+  if ((tm.tm_min > 34) && (tm.tm_min < 40)) {
     TWENTY;
     MFIVE;
     DEBUG_PRINT("twenty five");
   }
-  if ((timeClient.getMinutes() > 39) && (timeClient.getMinutes() < 45)) {
+  if ((tm.tm_min > 39) && (tm.tm_min < 45)) {
     TWENTY;
     DEBUG_PRINT("twenty");
   }
-  if ((timeClient.getMinutes() > 44) && (timeClient.getMinutes() < 50)) {
+  if ((tm.tm_min > 44) && (tm.tm_min < 50)) {
     AQUARTER;
     DEBUG_PRINT("a quarter");
   }
-  if ((timeClient.getMinutes() > 49) && (timeClient.getMinutes() < 55)) {
+  if ((tm.tm_min > 49) && (tm.tm_min < 55)) {
     MTEN;
     DEBUG_PRINT("ten");
   }
-  if (timeClient.getMinutes() > 54) {
+  if (tm.tm_min > 54) {
     MFIVE;
     DEBUG_PRINT("five");
   }
 
-  if ((timeClient.getMinutes() < 5))
+  if ((tm.tm_min < 5))
   {
-    switch (timeClient.getHours()) {
+    switch (tm.tm_hour) {
       case 1:
       case 13:
         ONE;
@@ -342,11 +348,11 @@ void displayTime(void) {
     }
 
   }
-  else if ((timeClient.getMinutes() < 35) && (timeClient.getMinutes() > 4))
+  else if ((tm.tm_min < 35) && (tm.tm_min > 4))
   {
     PAST;
     DEBUG_PRINT(" past ");
-    switch (timeClient.getHours()) {
+    switch (tm.tm_hour) {
       case 1:
       case 13:
         ONE;
@@ -403,7 +409,7 @@ void displayTime(void) {
     // the next hour, as we will be displaying a 'to' sign
     TO;
     DEBUG_PRINT(" to ");
-    switch (timeClient.getHours()) {
+    switch (tm.tm_hour) {
       case 1:
       case 13:
         TWO;
@@ -840,8 +846,8 @@ uint16_t readRegister(uint8_t device, byte thisRegister) {
     case 2: digitalWrite(CS3, LOW); break;
   }
 
-  DEBUG_PRINT("device "); DEBUG_PRINTLN(device);
-  DEBUG_PRINTLN("sending "); DEBUG_PRINTLNF(dataToSend, BIN);
+  //DEBUG_PRINT("device "); DEBUG_PRINTLN(device);
+  //DEBUG_PRINTLN("sending "); DEBUG_PRINTLNF(dataToSend, BIN);
 
   // send the device the register you want to read:
   result = SPI.transfer16(dataToSend);
@@ -858,21 +864,21 @@ uint16_t readRegister(uint8_t device, byte thisRegister) {
   delay(1);
 
   // return the result:
-  DEBUG_PRINTLN("reply "); DEBUG_PRINTLNF(result,BIN);
+  //DEBUG_PRINTLN("reply "); DEBUG_PRINTLNF(result,BIN);
   return (result);
 }
 
 //Sends a write command 
 void writeRegister(uint8_t device, byte thisRegister, byte thisValue) {
-  DEBUG_PRINTLN("writing register...");
+  //DEBUG_PRINTLN("writing register...");
 
   uint16_t result = 0;
   
   // now combine the register address and the command
   uint16_t dataToSend = (thisRegister << 8) | thisValue;
 
-  DEBUG_PRINT("device "); DEBUG_PRINTLN(device);
-  DEBUG_PRINT("sending "); DEBUG_PRINTLNF(dataToSend,BIN);
+  //DEBUG_PRINT("device "); DEBUG_PRINTLN(device);
+  //DEBUG_PRINT("sending "); DEBUG_PRINTLNF(dataToSend,BIN);
 
   SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE1));
   
@@ -895,7 +901,7 @@ void writeRegister(uint8_t device, byte thisRegister, byte thisValue) {
   SPI.endTransaction();
   delay(1);
 
-  DEBUG_PRINT("reply "); DEBUG_PRINTLNF(result,BIN);
+  //DEBUG_PRINT("reply "); DEBUG_PRINTLNF(result,BIN);
 
   // check for fault conditions
   byte fault = result >> 8;
